@@ -51,13 +51,16 @@ class LoginActivity : AppCompatActivity() {
         val request = JsonObjectRequest(Request.Method.POST, urlWsLogin, parametros, {response ->
             if (response.getBoolean("rpta")){
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }else{
                 mostrarMensaje(vista, response.getString("mensaje"))
             }
+            _btnLogin.isEnabled = true
         }, {
             Log.e("LOGIN", it.toString())
             _btnLogin.isEnabled = true
         })
+        _queue.add(request)
     }
 
     fun validarUsuarioPassword(): Boolean{
