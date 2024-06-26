@@ -54,11 +54,11 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    //Voley Kotlin
+    implementation("com.android.volley:volley:1.2.1")
     //Room Kotlin
     implementation ("androidx.room:room-runtime:2.2.5")
     kapt ("androidx.room:room-compiler:2.2.5")
     implementation ("androidx.room:room-ktx:2.2.5")
     androidTestImplementation ("androidx.room:room-testing:2.2.5")
-    //Voley Kotlin
-    implementation("com.android.volley:volley:1.2.1")
 }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class PersonaEntity (
 
     @PrimaryKey
-    var id: String,
+    var idpersona: Int,
     var nombres: String,
     var apellidos: String,
     var email: String,
