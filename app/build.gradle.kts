@@ -57,8 +57,8 @@ dependencies {
     //Voley Kotlin
     implementation("com.android.volley:volley:1.2.1")
     //Room Kotlin
-    implementation ("androidx.room:room-runtime:2.2.5")
-    kapt ("androidx.room:room-compiler:2.2.5")
-    implementation ("androidx.room:room-ktx:2.2.5")
-    androidTestImplementation ("androidx.room:room-testing:2.2.5")
+    implementation ("androidx.room:room-runtime:2.6.0")
+    implementation ("androidx.room:room-ktx:2.6.0")
+    kapt ("androidx.room:room-compiler:2.6.0")
+    androidTestImplementation ("androidx.room:room-testing:2.6.0")
 }
