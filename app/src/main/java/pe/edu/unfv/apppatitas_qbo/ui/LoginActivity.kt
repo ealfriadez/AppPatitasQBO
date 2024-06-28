@@ -71,6 +71,10 @@ class LoginActivity : AppCompatActivity() {
                 mostrarMensaje(it, "Ingrese usuario y password")
             }
         }
+        /*btnregistrar.setOnClickListener {
+            startActivity(Intent(this, RegistroActivity::class.java))
+            finish()
+        }*/
     }
 
     private fun setearValoresDeRecordar(vista: View) {
@@ -135,11 +139,11 @@ class LoginActivity : AppCompatActivity() {
 
     fun validarUsuarioPassword(): Boolean{
         var respuesta = true
-        if (_etUsuario.text.toString().trim().isNullOrEmpty()){
+        if (_etUsuario.text.toString().trim().isEmpty()){
             _etUsuario.isFocusableInTouchMode = true
             _etUsuario.requestFocus()
             respuesta = false
-        }else if (_etPassword.text.toString().trim().isNullOrEmpty()){
+        }else if (_etPassword.text.toString().trim().isEmpty()){
             _etPassword.isFocusableInTouchMode = true
             _etPassword.requestFocus()
             respuesta = false
