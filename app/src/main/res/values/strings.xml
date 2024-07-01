@@ -20,4 +20,13 @@
     <string name="val_chkRecordar">Recordar informacion de usuario</string>
     <string name="val_btnLogin">Iniciar sesion</string>
     <string name="val_btnRegistrar">Registrar usuario</string>
+    <string name="val_tvRegistro">REGISTRARME</string>
+    <string name="val_etNombreReg">Ingrese nombres</string>
+    <string name="val_etApellidoReg">Ingrese apellidos</string>
+    <string name="val_etEmailReg">Ingrese correo</string>
+    <string name="val_etNumeroReg">Ingrese numero telefonico</string>
+    <string name="val_etUsuarioReg">Ingrese usuario</string>
+    <string name="val_etPasswordReg">Ingrese password</string>
+    <string name="val_btnRegistrarUsuario">Registrar Usuario</string>
+    <string name="val_btnVolverLogin">Volver al login</string>
 </resources>

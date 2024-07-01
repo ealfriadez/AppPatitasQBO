@@ -2,6 +2,8 @@ package pe.edu.unfv.apppatitas_qbo.ui
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.EditText
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -11,13 +13,20 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import pe.edu.unfv.apppatitas_qbo.R
 import pe.edu.unfv.apppatitas_qbo.databinding.ActivityMainBinding
+import pe.edu.unfv.apppatitas_qbo.viewmodel.PersonaViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var _navView: NavigationView
+    private lateinit var _personaViewModel: PersonaViewModel
+    private lateinit var _tvNombres: TextView
+    private lateinit var _tvCorreo: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
         val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        _navView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -42,7 +51,23 @@ class MainActivity : AppCompatActivity() {
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        _navView.setupWithNavController(navController)
+        mostrarInfoAutenticacion()
+    }
+
+    private fun mostrarInfoAutenticacion() {
+        _tvNombres = _navView.getHeaderView(0)
+            .findViewById(R.id.tvNombres)
+        _tvCorreo = _navView.getHeaderView(0)
+            .findViewById(R.id.tvCorreo)
+        _personaViewModel = ViewModelProvider(this)
+            .get(PersonaViewModel::class.java)
+        _personaViewModel.obtener().observe(this, Observer{ persona ->
+            persona?.let {
+                _tvNombres.text = persona.nombres.uppercase()
+                _tvCorreo.text = persona.email
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

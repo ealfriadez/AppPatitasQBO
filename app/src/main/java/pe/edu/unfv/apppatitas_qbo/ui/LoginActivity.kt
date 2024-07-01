@@ -31,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var _etUsuario: EditText
     private lateinit var _etPassword: EditText
     private lateinit var _btnLogin: Button
+    private lateinit var _btnRegistrar: Button
     private lateinit var _chkRecordar: CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
         _etUsuario = findViewById(R.id.etUsuario)
         _etPassword = findViewById(R.id.etPassword)
         _btnLogin = findViewById(R.id.btnLogin)
+        _btnRegistrar = findViewById(R.id.btnRegistrar)
         _chkRecordar = findViewById(R.id.chkRecordar)
 
         if(verificarValorSharedPreferences()){
@@ -71,10 +73,10 @@ class LoginActivity : AppCompatActivity() {
                 mostrarMensaje(it, "Ingrese usuario y password")
             }
         }
-        /*btnregistrar.setOnClickListener {
+        _btnRegistrar.setOnClickListener {
             startActivity(Intent(this, RegistroActivity::class.java))
             finish()
-        }*/
+        }
     }
 
     private fun setearValoresDeRecordar(vista: View) {
