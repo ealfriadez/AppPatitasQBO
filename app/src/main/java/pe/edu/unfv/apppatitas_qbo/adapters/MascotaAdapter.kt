@@ -10,20 +10,16 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import pe.edu.unfv.apppatitas_qbo.R
 import pe.edu.unfv.apppatitas_qbo.model.Mascota
 
 class MascotaAdapter(
+
     private var lstMascotas: List<Mascota>, private val contex: Context)
-    : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    : RecyclerView.Adapter<MascotaAdapter.ViewHolder>() {
 
-    private lateinit var _tvNomMascota: TextView
-    private lateinit var _tvLugar: TextView
-    private lateinit var _tvFecha: TextView
-    private lateinit var _tvContacto: TextView
-    private lateinit var _ivMascota: ImageView
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return ViewHolder(layoutInflater.inflate(R.layout.item_mascota, parent, false))
     }
@@ -32,17 +28,20 @@ class MascotaAdapter(
         return lstMascotas.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemMascota = lstMascotas[position]
-
-
+        holder._tvNomMascota.text = itemMascota.nommascota
+        holder._tvLugar.text = itemMascota.lugar
+        holder._tvContacto.text = itemMascota.contacto
+        holder._tvFecha.text = itemMascota.fechaperdida
+        Glide.with(contex).load(itemMascota.urlimagen).into(holder._ivMascota)
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        _tvNomMascota = itemView.findViewById(R.id.tvNomMascota)
-        _tvLugar: TextView = itemView.findViewById(R.id.tvLugar)
-        val tvFecha: TextView = itemView.findViewById(R.id.tvFecha)
-        val tvContacto: TextView = itemView.findViewById(R.id.tvContacto)
-        val ivMascota: TextView = itemView.findViewById(R.id.ivMascota)
+        val _tvNomMascota: TextView = itemView.findViewById(R.id.tvNomMascota)
+        val _tvLugar: TextView = itemView.findViewById(R.id.tvLugar)
+        val _tvFecha: TextView = itemView.findViewById(R.id.tvFecha)
+        val _tvContacto: TextView = itemView.findViewById(R.id.tvContacto)
+        val _ivMascota: ImageView = itemView.findViewById(R.id.ivMascota)
     }
 }
