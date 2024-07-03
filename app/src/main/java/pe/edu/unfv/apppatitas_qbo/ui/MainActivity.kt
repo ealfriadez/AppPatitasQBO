@@ -1,7 +1,9 @@
 package pe.edu.unfv.apppatitas_qbo.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
@@ -68,6 +70,15 @@ class MainActivity : AppCompatActivity() {
                 _tvCorreo.text = persona.email
             }
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val idItem = item.itemId
+        if (idItem == R.id.action_salir){
+                startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

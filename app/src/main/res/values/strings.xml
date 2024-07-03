@@ -29,4 +29,11 @@
     <string name="val_etPasswordReg">Ingrese password</string>
     <string name="val_btnRegistrarUsuario">Registrar Usuario</string>
     <string name="val_btnVolverLogin">Volver al login</string>
+    <string name="val_tvTituVoluntario">UNETE A NUESTRO EQUIPO!</string>
+    <string name="val_tvTextoTerminos">\n¡Bienvenidos a todos los voluntarios de búsqueda de mascotas!\n¡Muchas gracias por unirse a nosotros en esta importante misión!\n\nSu dedicación y compromiso son esenciales para ayudar a encontrar a las mascotas perdidas y reunirlas con sus familias.\n\nAquí hay algunos consejos para ayudarlo a comenzar:\n\nRegístrese: Si aún no lo ha hecho, tómese un momento para registrarse como voluntario.\nEsto nos ayudará a mantenernos informados sobre sus habilidades e intereses, y a asignarle tareas que coincidan con sus capacidades.\nCapacitación: Ofrecemos capacitación regular para voluntarios.\nEsta capacitación lo ayudará a aprender todo lo que necesita saber sobre la búsqueda de mascotas perdidas, incluyendo cómo usar el equipo de búsqueda, cómo comunicarse con los propietarios de mascotas y cómo mantenerse seguro.\nÚnase a un equipo de búsqueda: Una vez que haya completado la capacitación, puede unirse a un equipo de búsqueda. Los equipos de búsqueda generalmente están compuestos por 2-4 voluntarios que trabajan juntos para cubrir un área específica.\nEsté preparado: Asegúrese de tener todo el equipo que necesita para la búsqueda, incluyendo zapatos cómodos, ropa adecuada para el clima, agua y bocadillos. También es importante que tenga un teléfono celular cargado con usted en caso de emergencia.\nSea paciente: La búsqueda de mascotas perdidas puede ser un trabajo desafiante, pero también es muy gratificante. No se desanime si no encuentra una mascota de inmediato.\nSiga buscando y nunca se rinda.\n\n¡Gracias de nuevo por su ayuda!\n\nJuntos, podemos hacer la diferencia para las mascotas perdidas y sus familias.</string>
+    <string name="val_chkAcepta">Acepta los terminos para ser voluntario</string>
+    <string name="val_btnRegVoluntario">REGISTRARME COMO VOLUNTARIO</string>
+    <string name="valEsVoluntario">GRACIAS POR SER VOLUNTARIO</string>
+    <string name="val_errorTerminos">Acepte los terminos para ser voluntario</string>
+    <string name="val_action_salir">Salir</string>
 </resources>

@@ -31,7 +31,6 @@ class ListaMascotasFragment : Fragment() {
         // Inflate the layout for this fragment
         _queue = Volley.newRequestQueue(context)
 
-        //val vista = inflater.inflate(R.layout.fragment_lista_mascotas, container, false)
         _binding = FragmentListaMascotasBinding.inflate(inflater, container, false)
         val _rvMascota: RecyclerView = binding.rvMascota
         _rvMascota.layoutManager = LinearLayoutManager(context)
