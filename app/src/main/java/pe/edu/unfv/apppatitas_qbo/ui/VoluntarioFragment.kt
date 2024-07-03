@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.snackbar.Snackbar
 import org.json.JSONObject
@@ -34,19 +36,27 @@ class VoluntarioFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _queue = Volley.newRequestQueue(context)
-        _personaViewModel = ViewModelProvider(this).get(PersonaViewModel::class.java)
-
-
+        _personaViewModel = ViewModelProvider(this)[PersonaViewModel::class.java]
         _personaViewModel.obtener()
             .observe(viewLifecycleOwner, Observer { persona ->
                 persona?.let {
-                    if (persona.esvoluntario == "1"){
+                    if(persona.esvoluntario == "1"){
                         actualizaFormulario()
                     }else{
                         _personaEntity = persona
                     }
                 }
             })
+        /*_personaViewModel.obtener()
+            .observe(viewLifecycleOwner, Observer { persona ->
+                persona?.let {
+                    if (persona.esvoluntario == "1"){
+                        actualizaFormulario()
+                    }else{
+                        _personaEntity = persona
+                    }º
+                }
+            })*/
 
 
         _binding = FragmentVoluntarioBinding.inflate(inflater, container, false)
@@ -56,6 +66,7 @@ class VoluntarioFragment : Fragment() {
                 registrarVoluntarioWS(it)
             }else{
                 mostrarMensaje(it, getString(R.string.val_errorTerminos))
+                Log.e("REGISTRO", it.toString())
             }
         }
         return binding.root
@@ -70,7 +81,7 @@ class VoluntarioFragment : Fragment() {
             urlWSVoluntario,
             parametros,
             { response ->
-                if (response.getBoolean("rpta")){
+                /*if (response.getBoolean("rpta")){
                     val nuevaPersonaEntity = PersonaEntity(
                         _personaEntity.id,
                         _personaEntity.nombres,
@@ -85,12 +96,21 @@ class VoluntarioFragment : Fragment() {
                     actualizaFormulario()
                 }
                 mostrarMensaje(vista, response.getString("mensaje"))
-                binding.btnRegVoluntario.isEnabled = true
+                binding.btnRegVoluntario.isEnabled = true*/
+                Log.e("REGISTRO VOLUNTARIO", response.toString())
             }, {
                 Log.e("REGISTRO VOLUNTARIO", it.message.toString())
                 binding.btnRegVoluntario.isEnabled = true
             }
         )
+        /*var request = StringRequest(Request.Method.POST, urlWSVoluntario, parametro, {
+            result ->
+            Log.e("REGISTRO VOLUNTARIO", result.toString())
+        }, {
+            err ->
+            Log.e("REGISTRO VOLUNTARIO", err.message.toString())
+        })*/
+
         _queue.add(request)
     }
 
