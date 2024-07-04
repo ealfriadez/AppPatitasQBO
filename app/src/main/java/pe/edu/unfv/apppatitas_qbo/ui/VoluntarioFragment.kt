@@ -47,26 +47,15 @@ class VoluntarioFragment : Fragment() {
                     }
                 }
             })
-        /*_personaViewModel.obtener()
-            .observe(viewLifecycleOwner, Observer { persona ->
-                persona?.let {
-                    if (persona.esvoluntario == "1"){
-                        actualizaFormulario()
-                    }else{
-                        _personaEntity = persona
-                    }º
-                }
-            })*/
-
 
         _binding = FragmentVoluntarioBinding.inflate(inflater, container, false)
+
         _binding!!.btnRegVoluntario.setOnClickListener{
             if (binding.chkAcepta.isChecked){
                 binding.btnRegVoluntario.isEnabled = false
                 registrarVoluntarioWS(it)
             }else{
                 mostrarMensaje(it, getString(R.string.val_errorTerminos))
-                Log.e("REGISTRO", it.toString())
             }
         }
         return binding.root
@@ -81,7 +70,7 @@ class VoluntarioFragment : Fragment() {
             urlWSVoluntario,
             parametros,
             { response ->
-                /*if (response.getBoolean("rpta")){
+                if (response.getBoolean("rpta")){
                     val nuevaPersonaEntity = PersonaEntity(
                         _personaEntity.id,
                         _personaEntity.nombres,
@@ -92,29 +81,22 @@ class VoluntarioFragment : Fragment() {
                         _personaEntity.password,
                         "1"
                     )
+                    Log.e("REGISTRO", _personaEntity.id.toString())
                     _personaViewModel.actualizar(nuevaPersonaEntity)
                     actualizaFormulario()
                 }
                 mostrarMensaje(vista, response.getString("mensaje"))
-                binding.btnRegVoluntario.isEnabled = true*/
-                Log.e("REGISTRO VOLUNTARIO", response.toString())
+                binding.btnRegVoluntario.isEnabled = true
             }, {
-                Log.e("REGISTRO VOLUNTARIO", it.message.toString())
                 binding.btnRegVoluntario.isEnabled = true
             }
         )
-        /*var request = StringRequest(Request.Method.POST, urlWSVoluntario, parametro, {
-            result ->
-            Log.e("REGISTRO VOLUNTARIO", result.toString())
-        }, {
-            err ->
-            Log.e("REGISTRO VOLUNTARIO", err.message.toString())
-        })*/
-
         _queue.add(request)
     }
 
     private fun actualizaFormulario(){
+
+        Log.e("REGISTRO", "demo")
         binding.tvTextoTerminos.visibility = View.GONE
         binding.btnRegVoluntario.visibility = View.GONE
         binding.chkAcepta.visibility = View.GONE
