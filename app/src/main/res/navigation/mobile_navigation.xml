@@ -14,4 +14,9 @@
         android:name="pe.edu.unfv.apppatitas_qbo.ui.VoluntarioFragment"
         android:label="@string/val_navVoluntario"
         tools:layout="@layout/fragment_voluntario" />
+    <fragment
+        android:id="@+id/navListaUsuarios"
+        android:name="pe.edu.unfv.apppatitas_qbo.ui.ListUsersFragment"
+        android:label="@string/val_navListaVoluntarios"
+        tools:layout="@layout/fragment_list_users" />
 </navigation>

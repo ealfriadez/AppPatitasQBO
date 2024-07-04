@@ -4,9 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -38,9 +35,9 @@ class MascotaAdapter(
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val _tvNomMascota: TextView = itemView.findViewById(R.id.tvNomMascota)
-        val _tvLugar: TextView = itemView.findViewById(R.id.tvLugar)
-        val _tvFecha: TextView = itemView.findViewById(R.id.tvFecha)
+        val _tvNomMascota: TextView = itemView.findViewById(R.id.tvNomVoluntario)
+        val _tvLugar: TextView = itemView.findViewById(R.id.tvApeVoluntario)
+        val _tvFecha: TextView = itemView.findViewById(R.id.tvEmail)
         val _tvContacto: TextView = itemView.findViewById(R.id.tvContacto)
         val _ivMascota: ImageView = itemView.findViewById(R.id.ivMascota)
     }

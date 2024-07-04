@@ -18,7 +18,7 @@
             android:layout_height="148dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cuidado_mascotas" />
+            app:srcCompat="@drawable/usuario_mascota" />
 
         <TextView
             android:id="@+id/tvNomVoluntario"
@@ -49,16 +49,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="TextView"
+            android:textColor="@color/PRIMARY_TEXT"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/tvNomVoluntario"
             app:layout_constraintTop_toBottomOf="@+id/tvNomVoluntario" />
 
-        <TextView
-            android:id="@+id/tvContacto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/tvEmail"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -96,7 +96,6 @@ class VoluntarioFragment : Fragment() {
 
     private fun actualizaFormulario(){
 
-        Log.e("REGISTRO", "demo")
         binding.tvTextoTerminos.visibility = View.GONE
         binding.btnRegVoluntario.visibility = View.GONE
         binding.chkAcepta.visibility = View.GONE

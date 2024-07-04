@@ -8,9 +8,19 @@
             android:id="@+id/navListaMascotas"
             android:icon="@drawable/tienda"
             android:title="@string/val_navListarMascotas" />
+    </group>
+    <group
+        android:id="@+id/grUsuarios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navListaUsuarios"
+            android:icon="@drawable/usuario"
+            android:title="@string/val_navLista" />
         <item
             android:id="@+id/navVoluntario"
-            android:icon="@drawable/lista"
+            android:icon="@drawable/pet_care"
             android:title="@string/val_navVoluntario" />
     </group>
 </menu>
