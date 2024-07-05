@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="145dp">
+        android:layout_height="150dp">
 
         <ImageView
             android:id="@+id/ivMascota"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="3dp"
             android:text="TextView"
             android:textColor="@color/PRIMARY_TEXT"
             android:textSize="20sp"
@@ -37,7 +37,7 @@
             android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:text="TextView"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/tvApeVoluntario"
@@ -47,13 +47,38 @@
             android:id="@+id/tvApeVoluntario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:text="TextView"
-            android:textColor="@color/PRIMARY_TEXT"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/tvNomVoluntario"
             app:layout_constraintTop_toBottomOf="@+id/tvNomVoluntario" />
+
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tvEmail"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+        <TextView
+            android:id="@+id/tvEmail_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tvTelefono"
+            app:layout_constraintTop_toBottomOf="@+id/tvTelefono" />
+
+        <TextView
+            android:id="@+id/tvNat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tvEmail_"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail_" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

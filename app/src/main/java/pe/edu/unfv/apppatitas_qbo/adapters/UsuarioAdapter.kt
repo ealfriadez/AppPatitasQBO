@@ -26,16 +26,22 @@ class UsuarioAdapter(
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val itemUsuario = lstUsuarios[position]
-            holder._tvNomVoluntario.text = itemUsuario.first_name
-            holder._tvApeVoluntario.text = itemUsuario.last_name
-            holder._tvEmail.text = itemUsuario.email
-            Glide.with(context).load(itemUsuario.avatar).into(holder._ivMascota)
+            holder._tvNomVoluntario.text = itemUsuario.name.title.plus(" " + itemUsuario.name.first.plus(" " + itemUsuario.name.last.plus(" - ".plus(itemUsuario.dob.age))))
+            holder._tvApeVoluntario.text = itemUsuario.location.street.name.toString().plus(" ".plus(itemUsuario.location.street.number))
+            holder._tvEmail.text = itemUsuario.location.city.plus("/".plus(itemUsuario.location.state).plus("/".plus(itemUsuario.location.country)))
+            holder._tvTelefono.text = itemUsuario.phone.plus("/".plus(itemUsuario.cell))
+            holder._tvEmail_.text = itemUsuario.email
+            holder._tvNat.text = itemUsuario.nat
+            Glide.with(context).load(itemUsuario.picture.large).into(holder._ivMascota)
         }
 
         class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
             val _tvNomVoluntario = itemView.findViewById<TextView>(R.id.tvNomVoluntario)
             val _tvApeVoluntario = itemView.findViewById<TextView>(R.id.tvApeVoluntario)
             val _tvEmail = itemView.findViewById<TextView>(R.id.tvEmail)
+            val _tvTelefono = itemView.findViewById<TextView>(R.id.tvTelefono)
+            val _tvEmail_ = itemView.findViewById<TextView>(R.id.tvEmail_)
+            val _tvNat= itemView.findViewById<TextView>(R.id.tvNat)
             val _ivMascota= itemView.findViewById<ImageView>(R.id.ivMascota)
         }
 }
